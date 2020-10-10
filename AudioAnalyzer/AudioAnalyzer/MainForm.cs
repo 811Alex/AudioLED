@@ -187,6 +187,7 @@ namespace AudioAnalyzer
                 }
                 catch
                 {
+                    timer.Enabled = false;
                     MessageBox.Show("Could not connect to the serial port!", "ERROR");
                 }
             }
@@ -198,10 +199,13 @@ namespace AudioAnalyzer
 
         private void Stop()
         {
-            port.Write("0 0 0");
             al.StopListening();
-            port.Close();
-            port.Dispose();
+            if (port.IsOpen)
+            {
+                port.Write("0 0 0");
+                port.Close();
+                port.Dispose();
+            }
         }
 
         private void NumericUpDownRefreshRate_ValueChanged(object sender, EventArgs e)

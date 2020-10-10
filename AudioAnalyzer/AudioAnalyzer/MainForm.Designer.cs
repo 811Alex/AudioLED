@@ -58,6 +58,7 @@
             // comboBoxDevices
             // 
             this.comboBoxDevices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxDevices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDevices.FormattingEnabled = true;
             this.comboBoxDevices.Location = new System.Drawing.Point(236, 12);
             this.comboBoxDevices.Name = "comboBoxDevices";
@@ -78,6 +79,7 @@
             // 
             // comboBoxSampleRate
             // 
+            this.comboBoxSampleRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSampleRate.FormattingEnabled = true;
             this.comboBoxSampleRate.Items.AddRange(new object[] {
             "8000",
@@ -253,6 +255,7 @@
             // 
             // comboBoxPort
             // 
+            this.comboBoxPort.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPort.FormattingEnabled = true;
             this.comboBoxPort.Location = new System.Drawing.Point(282, 157);
             this.comboBoxPort.Name = "comboBoxPort";
@@ -271,6 +274,7 @@
             // 
             // comboBoxBaudRate
             // 
+            this.comboBoxBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBaudRate.FormattingEnabled = true;
             this.comboBoxBaudRate.Items.AddRange(new object[] {
             "9600",

@@ -1,4 +1,5 @@
 ﻿using AudioAnalyzer.Properties;
+using Microsoft.Win32;
 using NAudio.CoreAudioApi;
 using NAudio.Wave;
 using System;
@@ -93,6 +94,7 @@ namespace AudioAnalyzer
             comboBoxSampleRate.SelectedIndex = Settings.Default.sampleRate;
             numericUpDownRefreshRate.Value = Settings.Default.refreshRate;
             numericUpDownSensitivity.Value = Settings.Default.sensitivity;
+            if (Settings.Default.minimized) this.WindowState = FormWindowState.Minimized;
         }
 
         private void ComboBoxSampleRate_SelectedIndexChanged(object sender, EventArgs e)
@@ -232,6 +234,21 @@ namespace AudioAnalyzer
         {
             Settings.Default.baudRate = comboBoxBaudRate.SelectedIndex;
             Settings.Default.Save();
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            bool mini = (this.WindowState == FormWindowState.Minimized);
+            Settings.Default.minimized = mini;
+            Settings.Default.Save();
+            notifyIcon.Visible = mini;
+            if (mini) this.Hide();
+        }
+
+        private void notifyIcon_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

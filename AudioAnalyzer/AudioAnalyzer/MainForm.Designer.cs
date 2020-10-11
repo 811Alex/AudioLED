@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.comboBoxDevices = new System.Windows.Forms.ComboBox();
             this.progressBarVol = new System.Windows.Forms.ProgressBar();
             this.timer = new System.Windows.Forms.Timer(this.components);
@@ -51,6 +52,7 @@
             this.comboBoxPort = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxBaudRate = new System.Windows.Forms.ComboBox();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSensitivity)).BeginInit();
             this.SuspendLayout();
@@ -288,6 +290,12 @@
             this.comboBoxBaudRate.TabIndex = 24;
             this.comboBoxBaudRate.SelectedIndexChanged += new System.EventHandler(this.comboBoxBaudRate_SelectedIndexChanged);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "AudioAnalyzer";
+            this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,8 +322,11 @@
             this.Controls.Add(this.comboBoxSampleRate);
             this.Controls.Add(this.progressBarVol);
             this.Controls.Add(this.comboBoxDevices);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "AudioAnalyzer";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSensitivity)).EndInit();
             this.ResumeLayout(false);
@@ -347,6 +358,7 @@
         private System.Windows.Forms.ComboBox comboBoxPort;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxBaudRate;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

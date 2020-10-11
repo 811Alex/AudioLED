@@ -106,5 +106,17 @@ namespace AudioAnalyzer.Properties {
                 this["port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool minimized {
+            get {
+                return ((bool)(this["minimized"]));
+            }
+            set {
+                this["minimized"] = value;
+            }
+        }
     }
 }

@@ -169,7 +169,7 @@ namespace AudioAnalyzer
                 progressBarLow.Value = 0;
                 Stop();
             }
-            Settings.Default.start = hasStarted;
+            Settings.Default.start = (buttonStart.Text == "Stop");
             Settings.Default.Save();
         }
 

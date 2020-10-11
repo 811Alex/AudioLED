@@ -53,6 +53,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxBaudRate = new System.Windows.Forms.ComboBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.checkBoxStartup = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSensitivity)).BeginInit();
             this.SuspendLayout();
@@ -220,9 +221,9 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(314, 39);
+            this.buttonStart.Location = new System.Drawing.Point(440, 39);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(215, 23);
+            this.buttonStart.Size = new System.Drawing.Size(89, 23);
             this.buttonStart.TabIndex = 18;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -296,11 +297,23 @@
             this.notifyIcon.Text = "AudioAnalyzer";
             this.notifyIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseClick);
             // 
+            // checkBoxStartup
+            // 
+            this.checkBoxStartup.AutoSize = true;
+            this.checkBoxStartup.Location = new System.Drawing.Point(314, 43);
+            this.checkBoxStartup.Name = "checkBoxStartup";
+            this.checkBoxStartup.Size = new System.Drawing.Size(112, 17);
+            this.checkBoxStartup.TabIndex = 25;
+            this.checkBoxStartup.Text = "Launch on startup";
+            this.checkBoxStartup.UseVisualStyleBackColor = true;
+            this.checkBoxStartup.CheckedChanged += new System.EventHandler(this.checkBoxStartup_CheckedChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 190);
+            this.Controls.Add(this.checkBoxStartup);
             this.Controls.Add(this.comboBoxBaudRate);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBoxPort);
@@ -359,6 +372,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxBaudRate;
         private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.CheckBox checkBoxStartup;
     }
 }
 

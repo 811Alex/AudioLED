@@ -250,5 +250,12 @@ namespace AudioAnalyzer
             this.Show();
             this.WindowState = FormWindowState.Normal;
         }
+
+        private void checkBoxStartup_CheckedChanged(object sender, EventArgs e)
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            if (checkBoxStartup.Checked) rk.SetValue(Application.ProductName, Application.ExecutablePath);
+            else rk.DeleteValue(Application.ProductName, false);
+        }
     }
 }

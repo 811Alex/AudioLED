@@ -13,8 +13,8 @@ namespace AudioAnalyzer
 {
     public partial class MainForm : Form
     {
-        private readonly int LOWLIMIT = 500;
-        private readonly int MIDLIMIT = 2000;
+        private readonly int LOWLIMIT = 450;
+        private readonly int MIDLIMIT = 700;
         private readonly int BUFFERSIZE = (int)Math.Pow(2, 6);
         private Dictionary<String, int> waveInDict = new Dictionary<String, int>();
         private int sensitivity;

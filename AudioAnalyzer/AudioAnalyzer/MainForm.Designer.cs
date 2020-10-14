@@ -54,8 +54,16 @@
             this.comboBoxBaudRate = new System.Windows.Forms.ComboBox();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.checkBoxStartup = new System.Windows.Forms.CheckBox();
+            this.numericUpDownMidLimit = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.numericUpDownLowLimit = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSensitivity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMidLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLowLimit)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxDevices
@@ -102,21 +110,21 @@
             // 
             this.progressBarHigh.Location = new System.Drawing.Point(106, 68);
             this.progressBarHigh.Name = "progressBarHigh";
-            this.progressBarHigh.Size = new System.Drawing.Size(423, 23);
+            this.progressBarHigh.Size = new System.Drawing.Size(323, 23);
             this.progressBarHigh.TabIndex = 6;
             // 
             // progressBarMid
             // 
             this.progressBarMid.Location = new System.Drawing.Point(106, 97);
             this.progressBarMid.Name = "progressBarMid";
-            this.progressBarMid.Size = new System.Drawing.Size(423, 23);
+            this.progressBarMid.Size = new System.Drawing.Size(323, 23);
             this.progressBarMid.TabIndex = 7;
             // 
             // progressBarLow
             // 
             this.progressBarLow.Location = new System.Drawing.Point(106, 126);
             this.progressBarLow.Name = "progressBarLow";
-            this.progressBarLow.Size = new System.Drawing.Size(423, 23);
+            this.progressBarLow.Size = new System.Drawing.Size(323, 23);
             this.progressBarLow.TabIndex = 8;
             // 
             // numericUpDownRefreshRate
@@ -223,7 +231,7 @@
             // 
             this.buttonStart.Location = new System.Drawing.Point(440, 39);
             this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(89, 23);
+            this.buttonStart.Size = new System.Drawing.Size(89, 52);
             this.buttonStart.TabIndex = 18;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
@@ -308,11 +316,89 @@
             this.checkBoxStartup.UseVisualStyleBackColor = true;
             this.checkBoxStartup.CheckedChanged += new System.EventHandler(this.checkBoxStartup_CheckedChanged);
             // 
+            // numericUpDownMidLimit
+            // 
+            this.numericUpDownMidLimit.Location = new System.Drawing.Point(456, 99);
+            this.numericUpDownMidLimit.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDownMidLimit.Name = "numericUpDownMidLimit";
+            this.numericUpDownMidLimit.Size = new System.Drawing.Size(47, 20);
+            this.numericUpDownMidLimit.TabIndex = 26;
+            this.numericUpDownMidLimit.Value = new decimal(new int[] {
+            700,
+            0,
+            0,
+            0});
+            this.numericUpDownMidLimit.ValueChanged += new System.EventHandler(this.numericUpDownMidLimit_ValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(437, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(13, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "<";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(437, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(13, 13);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "<";
+            // 
+            // numericUpDownLowLimit
+            // 
+            this.numericUpDownLowLimit.Location = new System.Drawing.Point(456, 128);
+            this.numericUpDownLowLimit.Maximum = new decimal(new int[] {
+            700,
+            0,
+            0,
+            0});
+            this.numericUpDownLowLimit.Name = "numericUpDownLowLimit";
+            this.numericUpDownLowLimit.Size = new System.Drawing.Size(47, 20);
+            this.numericUpDownLowLimit.TabIndex = 29;
+            this.numericUpDownLowLimit.Value = new decimal(new int[] {
+            450,
+            0,
+            0,
+            0});
+            this.numericUpDownLowLimit.ValueChanged += new System.EventHandler(this.numericUpDownLowLimit_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(509, 132);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 13);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Hz";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(509, 102);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(20, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Hz";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 190);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.numericUpDownLowLimit);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.numericUpDownMidLimit);
             this.Controls.Add(this.checkBoxStartup);
             this.Controls.Add(this.comboBoxBaudRate);
             this.Controls.Add(this.label10);
@@ -342,6 +428,8 @@
             this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRefreshRate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSensitivity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMidLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownLowLimit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -373,6 +461,12 @@
         private System.Windows.Forms.ComboBox comboBoxBaudRate;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.CheckBox checkBoxStartup;
+        private System.Windows.Forms.NumericUpDown numericUpDownMidLimit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.NumericUpDown numericUpDownLowLimit;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }
 

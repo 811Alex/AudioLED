@@ -10,8 +10,8 @@ namespace AudioAnalyzer
 {
     class AudioListener
     {
-        private readonly int lowLimit;
-        private readonly int midLimit;
+        private int lowLimit;
+        private int midLimit;
         private readonly int bufferSize;
         private BufferedWaveProvider bwp;
         private WaveIn wi;
@@ -19,9 +19,19 @@ namespace AudioAnalyzer
 
         public AudioListener(int lowLimit, int midLimit, int bufferSize)
         {
-            this.lowLimit = lowLimit;
-            this.midLimit = midLimit;
+            setLowLimit(lowLimit);
+            setMidLimit(midLimit);
             this.bufferSize = bufferSize;
+        }
+
+        public void setLowLimit(int lowLimit)
+        {
+            this.lowLimit = lowLimit;
+        }
+
+        public void setMidLimit(int midLimit)
+        {
+            this.midLimit = midLimit;
         }
 
         public void StartListening(int deviceID, int rate)

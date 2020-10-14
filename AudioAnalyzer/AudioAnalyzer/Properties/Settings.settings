@@ -26,5 +26,11 @@
     <Setting Name="minimized" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="lowLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">450</Value>
+    </Setting>
+    <Setting Name="midLimit" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">700</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

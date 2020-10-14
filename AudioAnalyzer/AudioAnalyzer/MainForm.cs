@@ -13,8 +13,6 @@ namespace AudioAnalyzer
 {
     public partial class MainForm : Form
     {
-        private readonly int LOWLIMIT = 450;
-        private readonly int MIDLIMIT = 700;
         private readonly int BUFFERSIZE = (int)Math.Pow(2, 6);
         private Dictionary<String, int> waveInDict = new Dictionary<String, int>();
         private int sensitivity;
@@ -54,7 +52,7 @@ namespace AudioAnalyzer
             timer.Interval = (int)Math.Round(numericUpDownRefreshRate.Value);
             sensitivity = (int)Math.Round(numericUpDownSensitivity.Value);
 
-            al = new AudioListener(LOWLIMIT, MIDLIMIT, BUFFERSIZE);
+            al = new AudioListener((int)Math.Round(numericUpDownLowLimit.Value), (int)Math.Round(numericUpDownMidLimit.Value), BUFFERSIZE);
 
             if (Settings.Default.start) ButtonStart_Click(null, null);
         }
@@ -94,6 +92,8 @@ namespace AudioAnalyzer
             comboBoxSampleRate.SelectedIndex = Settings.Default.sampleRate;
             numericUpDownRefreshRate.Value = Settings.Default.refreshRate;
             numericUpDownSensitivity.Value = Settings.Default.sensitivity;
+            numericUpDownLowLimit.Value = Settings.Default.lowLimit;
+            numericUpDownMidLimit.Value = Settings.Default.midLimit;
             if (Settings.Default.minimized) this.WindowState = FormWindowState.Minimized;
         }
 
@@ -256,6 +256,25 @@ namespace AudioAnalyzer
             RegistryKey rk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (checkBoxStartup.Checked) rk.SetValue(Application.ProductName, Application.ExecutablePath);
             else rk.DeleteValue(Application.ProductName, false);
+        }
+
+        private void numericUpDownMidLimit_ValueChanged(object sender, EventArgs e)
+        {
+            int val = (int)Math.Round(numericUpDownMidLimit.Value);
+            numericUpDownLowLimit.Maximum = val;
+            Settings.Default.midLimit = val;
+            Settings.Default.Save();
+            al.setMidLimit(val);
+        }
+
+        private void numericUpDownLowLimit_ValueChanged(object sender, EventArgs e)
+        {
+            int val = (int)Math.Round(numericUpDownLowLimit.Value);
+            numericUpDownMidLimit.Minimum = val;
+            Settings.Default.lowLimit = val;
+            Settings.Default.Save();
+            al.setLowLimit(val);
+
         }
     }
 }

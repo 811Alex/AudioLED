@@ -118,5 +118,29 @@ namespace AudioAnalyzer.Properties {
                 this["minimized"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("450")]
+        public int lowLimit {
+            get {
+                return ((int)(this["lowLimit"]));
+            }
+            set {
+                this["lowLimit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("700")]
+        public int midLimit {
+            get {
+                return ((int)(this["midLimit"]));
+            }
+            set {
+                this["midLimit"] = value;
+            }
+        }
     }
 }
